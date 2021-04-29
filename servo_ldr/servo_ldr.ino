@@ -1,3 +1,8 @@
+/*
+Dev: Álison Venâncio
+Video: https://www.youtube.com/watch?v=I33AGpzh8EI
+*/
+
 #include <Servo.h>
 
 #define PIN_LDR_LFT 1
