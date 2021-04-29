@@ -8,8 +8,6 @@ AVRDUDE_CONF=/etc/avrdude.conf
 BOARD_TAG=uno
 USER_LIB_PATH=/home/alvenan/Documents/arduino/libraries
 
-ARDUINO_LIBS=NewLiquidCrystal
-ARDUINO_LIBS+=Wire
 ARDUINO_LIBS+=Servo
 
 include /usr/share/arduino/Arduino.mk
