@@ -5,41 +5,41 @@ Video: https://www.youtube.com/watch?v=I33AGpzh8EI
 
 #include <Servo.h>
 
-#define PIN_LDR_LFT 1
-#define PIN_LDR_RGHT 0
-#define PIN_SERVO 12
+#define __PIN_LDR_LFT 1
+#define __PIN_LDR_RGHT 0
+#define __PIN_SERVO 12
 
-#define MIN_ANG 0
-#define MAX_ANG 180
+#define __MIN_ANG 0
+#define __MAX_ANG 180
 
-#define DIFF_OFFSET 75
-#define INC_VALUE 10
-#define DELAY 20
+#define __DIFF_OFFSET 75
+#define __INC_VALUE 10
+#define __DELAY 20
 
 Servo myServo;
-int ldrLft;
-int ldrRght;
+int ldr_lft;
+int ldr_rght;
 int ldr_diff;
 int ang;
 
 void setup(){
-    myServo.attach(PIN_SERVO);
-    myServo.write(MIN_ANG);
-    ang=MIN_ANG;
+    myServo.attach(__PIN_SERVO);
+    myServo.write(__MIN_ANG);
+    ang=__MIN_ANG;
 }
 
 void loop(){
-    ldrLft = analogRead(PIN_LDR_LFT);
-    ldrRght = analogRead(PIN_LDR_RGHT);
-    ldr_diff = ldrRght-ldrLft;
+    ldr_lft = analogRead(__PIN_LDR_LFT);
+    ldr_rght = analogRead(__PIN_LDR_RGHT);
+    ldr_diff = ldr_rght-ldr_lft;
 
-    if(ldr_diff > DIFF_OFFSET) ang+=INC_VALUE;
-    if(ang>MAX_ANG) ang=MAX_ANG;
+    if(ldr_diff > __DIFF_OFFSET) ang+=__INC_VALUE;
+    if(ang>__MAX_ANG) ang=__MAX_ANG;
                 
-    if(ldr_diff <-DIFF_OFFSET) ang-=INC_VALUE;
-    if(ang<MIN_ANG) ang=MIN_ANG;
+    if(ldr_diff <-__DIFF_OFFSET) ang-=__INC_VALUE;
+    if(ang<__MIN_ANG) ang=__MIN_ANG;
     
     myServo.write(ang);
     
-    delay(DELAY);
+    delay(__DELAY);
 }
