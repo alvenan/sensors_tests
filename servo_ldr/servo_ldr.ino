@@ -26,6 +26,10 @@ void setup(){
     myServo.attach(__PIN_SERVO);
     myServo.write(__MIN_ANG);
     ang=__MIN_ANG;
+
+    myServo.attach(__PIN_SERVO);
+    myServo.write(__MIN_ANG);
+    ang=__MIN_ANG;
 }
 
 void loop(){
